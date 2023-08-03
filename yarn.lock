@@ -4832,7 +4832,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stoplight/spectral-core@npm:>=1, @stoplight/spectral-core@npm:^1.16.1, @stoplight/spectral-core@npm:^1.7.0, @stoplight/spectral-core@npm:^1.8.0, @stoplight/spectral-core@npm:^1.8.1":
+"@stoplight/spectral-core@npm:>=1, @stoplight/spectral-core@npm:^1.7.0, @stoplight/spectral-core@npm:^1.8.0, @stoplight/spectral-core@npm:^1.8.1":
   version: 1.17.0
   resolution: "@stoplight/spectral-core@npm:1.17.0"
   dependencies:
@@ -4861,7 +4861,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@stoplight/spectral-core@npm:^1.15.1, @stoplight/spectral-core@npm:^1.18.0":
+"@stoplight/spectral-core@npm:^1.15.1, @stoplight/spectral-core@npm:^1.18.0, @stoplight/spectral-core@npm:^1.18.3":
   version: 1.18.3
   resolution: "@stoplight/spectral-core@npm:1.18.3"
   dependencies:
@@ -7282,7 +7282,7 @@ __metadata:
     "@material-ui/core": ^4.12.2
     "@material-ui/icons": ^4.9.1
     "@material-ui/lab": 4.0.0-alpha.57
-    "@stoplight/spectral-core": ^1.16.1
+    "@stoplight/spectral-core": ^1.18.3
     "@stoplight/spectral-ruleset-bundler": ^1.5.1
     "@stoplight/spectral-runtime": ^1.1.2
     "@testing-library/jest-dom": ^5.17.0

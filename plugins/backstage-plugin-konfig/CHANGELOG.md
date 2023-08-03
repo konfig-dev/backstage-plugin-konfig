@@ -1,5 +1,11 @@
 # backstage-plugin-konfig
 
+## 0.4.2
+
+### Patch Changes
+
+- 338fcb2: use remote url for image in README.md
+
 ## 0.4.1
 
 ### Patch Changes

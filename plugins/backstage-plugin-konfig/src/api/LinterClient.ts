@@ -16,10 +16,10 @@
 
 import { ConfigApi } from '@backstage/core-plugin-api';
 import { LinterApi, LinterResult, LintOptions } from './types';
-import { Spectral } from '@stoplight/spectral-core';
+import { Konfig } from 'konfig-typescript-sdk';
 // @ts-ignore
 import { bundleAndLoadRuleset } from '@stoplight/spectral-ruleset-bundler/with-loader';
-import { isApiDocsKonfigLinterAvailable } from '../lib/helper';
+import { isApiDocsKonfigAvailable } from '../lib/helper';
 import { ApiEntity } from '@backstage/catalog-model';
 
 /**
@@ -44,18 +44,11 @@ export class LinterClient implements LinterApi {
   }
 
   private async lintApi(content: string): Promise<LinterResult> {
-    const res = await (
-      await fetch('https://api.konfigthis.com/lint', {
-        method: 'POST',
-        body: JSON.stringify({
-          spec: content,
-        }),
-      })
-    ).json();
+    const res = await new Konfig().linting.lint({ spec: content });
 
     return {
       rulesetUrl: 'https://www.npmjs.com/package/konfig-spectral-ruleset',
-      data: ([] as any)
+      data: res.data.diagnosis
         .sort((a, b) => a.severity - b.severity)
         .map(diagnosticItem => ({
           linePosition: {
@@ -80,6 +73,6 @@ export class LinterClient implements LinterApi {
   }
 
   isApiTypeSupported(entity: ApiEntity) {
-    return isApiDocsKonfigLinterAvailable(entity);
+    return isApiDocsKonfigAvailable(entity);
   }
 }

@@ -45,10 +45,10 @@ const useStyles = makeStyles(() => ({
 }));
 
 /**
- * Component for browsing API docs spectral linter on an entity page.
+ * Component for browsing Konfig on an entity page.
  * @public
  */
-export const EntityApiDocsSpectralLinterContent = () => {
+export const EntityApiDocsKonfigContent = () => {
   const classes = useStyles();
   const [expanded, setExpanded] = useState<string | false>(false);
   const { entity } = useEntity<ApiEntity>();
@@ -94,11 +94,9 @@ export const EntityApiDocsSpectralLinterContent = () => {
     <InfoCard
       title="Konfig Linter"
       subheader={
-        value?.rulesetUrl && (
-          <Link href={value?.rulesetUrl} target="_blank">
-            Rule set used
-          </Link>
-        )
+        <Link href="https://konfigthis.com/docs/lint-rules" target="_blank">
+          Read more about lint rules
+        </Link>
       }
     >
       {loading && <Progress />}

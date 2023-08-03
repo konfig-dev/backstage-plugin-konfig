@@ -5,7 +5,7 @@ import { Entity } from '@backstage/catalog-model';
 import { MockConfigApi } from '@backstage/test-utils';
 import {
   apiDocsSpectralLinterPlugin,
-  EntityApiDocsSpectralLinterContent,
+  EntityApiDocsKonfigContent,
 } from '../src';
 import { linterApiRef, LinterClient } from '../src/api';
 // @ts-ignore
@@ -36,7 +36,7 @@ createDevApp()
   .addPage({
     element: (
       <EntityProvider entity={openapiApiEntity as any as Entity}>
-        <EntityApiDocsSpectralLinterContent />
+        <EntityApiDocsKonfigContent />
       </EntityProvider>
     ),
     title: 'Open API',
@@ -45,7 +45,7 @@ createDevApp()
   .addPage({
     element: (
       <EntityProvider entity={asyncapiApiEntity as any as Entity}>
-        <EntityApiDocsSpectralLinterContent />
+        <EntityApiDocsKonfigContent />
       </EntityProvider>
     ),
     title: 'Async API',
@@ -54,7 +54,7 @@ createDevApp()
   .addPage({
     element: (
       <EntityProvider entity={openapiZalandoApiEntity as any as Entity}>
-        <EntityApiDocsSpectralLinterContent />
+        <EntityApiDocsKonfigContent />
       </EntityProvider>
     ),
     title: 'Open API - Zalando',
@@ -63,7 +63,7 @@ createDevApp()
   .addPage({
     element: (
       <EntityProvider entity={openapiBaloiseApiEntity as any as Entity}>
-        <EntityApiDocsSpectralLinterContent />
+        <EntityApiDocsKonfigContent />
       </EntityProvider>
     ),
     title: 'Open API - Baloise',

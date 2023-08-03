@@ -20,5 +20,5 @@ import { createRouteRef } from '@backstage/core-plugin-api';
  * @public
  */
 export const rootRouteRef = createRouteRef({
-  id: 'api-docs-spectral-linter',
+  id: 'api-docs-konfig',
 });

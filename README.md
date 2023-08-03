@@ -2,7 +2,7 @@
 
 ## Setup
 
-Follow [installation instructions](./plugins/api-docs-spectral-linter).
+Follow [installation instructions](./plugins/backstage-plugin-konfig).
 
 ## Update backstage deps
 

@@ -6629,6 +6629,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:0.27.2":
+  version: 0.27.2
+  resolution: "axios@npm:0.27.2"
+  dependencies:
+    follow-redirects: ^1.14.9
+    form-data: ^4.0.0
+  checksum: 38cb7540465fe8c4102850c4368053c21683af85c5fdf0ea619f9628abbcb59415d1e22ebc8a6390d2bbc9b58a9806c874f139767389c862ec9b772235f06854
+  languageName: node
+  linkType: hard
+
 "axobject-query@npm:^3.1.1":
   version: 3.1.1
   resolution: "axobject-query@npm:3.1.1"
@@ -6783,6 +6793,7 @@ __metadata:
     "@testing-library/user-event": ^14.0.0
     "@types/node": "*"
     cross-fetch: ^3.1.5
+    konfig-typescript-sdk: ^1.2.0
     msw: ^1.0.0
     react-use: ^17.2.4
   peerDependencies:
@@ -10006,7 +10017,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0":
+"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.9":
   version: 1.15.2
   resolution: "follow-redirects@npm:1.15.2"
   peerDependenciesMeta:
@@ -12695,6 +12706,15 @@ __metadata:
   version: 4.1.5
   resolution: "kleur@npm:4.1.5"
   checksum: 1dc476e32741acf0b1b5b0627ffd0d722e342c1b0da14de3e8ae97821327ca08f9fb944542fb3c126d90ac5f27f9d804edbe7c585bf7d12ef495d115e0f22c12
+  languageName: node
+  linkType: hard
+
+"konfig-typescript-sdk@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "konfig-typescript-sdk@npm:1.2.0"
+  dependencies:
+    axios: 0.27.2
+  checksum: bb674153fee9942d1088d42b6181c83273fa399ea035abdbbfe0d1dde6139b1d9837544732f2e4408503f0bca3b418b0eaaef74f09102d59677a8b656e6f920f
   languageName: node
   linkType: hard
 

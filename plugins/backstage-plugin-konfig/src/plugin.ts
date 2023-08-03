@@ -24,10 +24,10 @@ import { rootRouteRef } from './routes';
 import { linterApiRef, LinterClient } from './api';
 
 /**
- * The Backstage plugin that holds API docs spectral linter specific components
+ * The Backstage plugin that holds API docs Konfig specific components
  * @public
  */
-export const apiDocsSpectralLinterPlugin = createPlugin({
+export const apiDocsKonfigPlugin = createPlugin({
   id: 'api-docs-spectral-linter',
   apis: [
     createApiFactory({
@@ -49,14 +49,13 @@ export const apiDocsSpectralLinterPlugin = createPlugin({
  * An extension for browsing API docs spectral linter on an entity page.
  * @public
  */
-export const EntityApiDocsSpectralLinterContent =
-  apiDocsSpectralLinterPlugin.provide(
-    createRoutableExtension({
-      name: 'EntityApiDocsSpectralLinterPluginContent',
-      component: () =>
-        import('./components/EntityApiDocsSpectralLinterContent').then(
-          m => m.EntityApiDocsSpectralLinterContent,
-        ),
-      mountPoint: rootRouteRef,
-    }),
-  );
+export const EntityApiDocsKonfigContent = apiDocsKonfigPlugin.provide(
+  createRoutableExtension({
+    name: 'EntityApiDocsKonfigPluginContent',
+    component: () =>
+      import('./components/EntityApiDocsKonfigContent').then(
+        m => m.EntityApiDocsKonfigContent,
+      ),
+    mountPoint: rootRouteRef,
+  }),
+);

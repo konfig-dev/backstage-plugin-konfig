@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { apiDocsSpectralLinterPlugin } from './plugin';
+import { apiDocsKonfigPlugin } from './plugin';
 
 describe('spectral linter', () => {
   it('should export plugin', () => {
-    expect(apiDocsSpectralLinterPlugin).toBeDefined();
+    expect(apiDocsKonfigPlugin).toBeDefined();
   });
 });

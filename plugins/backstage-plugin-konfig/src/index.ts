@@ -15,13 +15,13 @@
  */
 
 /**
- * API docs spectral linter frontend plugin
+ * API docs Konfig frontend plugin
  *
  * @packageDocumentation
  */
 
-export { isApiDocsKonfigLinterAvailable as isApiDocsSpectralLinterAvailable } from './lib/helper';
+export { isApiDocsKonfigAvailable } from './lib/helper';
 export {
-  apiDocsSpectralLinterPlugin,
-  EntityApiDocsSpectralLinterContent,
+  apiDocsKonfigPlugin as apiDocsSpectralLinterPlugin,
+  EntityApiDocsKonfigContent,
 } from './plugin';

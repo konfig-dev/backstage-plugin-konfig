@@ -34,5 +34,5 @@ export const getSpectralRulesetUrl = (entity: Entity) =>
  * Utility function to determine if the given entity can be linted.
  * @public
  */
-export const isApiDocsKonfigLinterAvailable = (entity: Entity) =>
+export const isApiDocsKonfigAvailable = (entity: Entity) =>
   Boolean(entity.kind === 'API') && Boolean(entity.spec?.type === 'openapi');

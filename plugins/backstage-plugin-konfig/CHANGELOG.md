@@ -1,5 +1,11 @@
 # backstage-plugin-konfig
 
+## 0.4.1
+
+### Patch Changes
+
+- bfe23d0: update README.md to work in npm
+
 ## 0.4.0
 
 ### Minor Changes

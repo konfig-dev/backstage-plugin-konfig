@@ -1,5 +1,12 @@
 # backstage-plugin-konfig
 
+## 0.2.0
+
+### Minor Changes
+
+- 231ebfe: Upgraded backstage dependencies to 1.16.0
+- 292ef05: added logo.png and updated CHANGELOG.md title
+
 ## 0.2.3
 
 ### Patch Changes

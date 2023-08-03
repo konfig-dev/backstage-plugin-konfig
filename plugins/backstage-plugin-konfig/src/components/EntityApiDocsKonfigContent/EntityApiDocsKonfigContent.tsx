@@ -16,7 +16,6 @@
 
 import React, { useState } from 'react';
 import {
-  Avatar,
   CodeSnippet,
   InfoCard,
   Progress,

@@ -2,7 +2,6 @@ import React from 'react';
 import { createDevApp } from '@backstage/dev-utils';
 import { EntityProvider } from '@backstage/plugin-catalog-react';
 import { Entity } from '@backstage/catalog-model';
-import { MockConfigApi } from '@backstage/test-utils';
 import {
   apiDocsSpectralLinterPlugin,
   EntityApiDocsKonfigContent,
@@ -17,21 +16,12 @@ import openapiZalandoApiEntity from './openapi-zalando-example-api.yaml';
 // @ts-ignore
 import openapiBaloiseApiEntity from './openapi-baloise-example-api.yaml';
 
-const mockConfig = new MockConfigApi({
-  spectralLinter: {
-    openApiRulesetUrl:
-      'https://gist.githubusercontent.com/dweber019/a368819668a76363849db6378792e907/raw/backstage-spectral-linter-openapi-ruleset.yaml',
-    asyncApiRulesetUrl:
-      'https://gist.githubusercontent.com/dweber019/a368819668a76363849db6378792e907/raw/backstage-spectral-linter-asyncapi-ruleset.yaml',
-  },
-});
-
 createDevApp()
   .registerPlugin(apiDocsSpectralLinterPlugin)
   .registerApi({
     api: linterApiRef,
     deps: {},
-    factory: () => new LinterClient({ configApi: mockConfig }),
+    factory: () => new LinterClient(),
   })
   .addPage({
     element: (

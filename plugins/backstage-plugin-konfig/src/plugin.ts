@@ -35,8 +35,8 @@ export const apiDocsKonfigPlugin = createPlugin({
       deps: {
         configApi: configApiRef,
       },
-      factory({ configApi }) {
-        return new LinterClient({ configApi });
+      factory() {
+        return new LinterClient();
       },
     }),
   ],

@@ -37,12 +37,6 @@ export interface LinterClientOptions {
  * @public
  */
 export class LinterClient implements LinterApi {
-  private readonly configApi: ConfigApi;
-
-  constructor(options: LinterClientOptions) {
-    this.configApi = options.configApi;
-  }
-
   private async lintApi(content: string): Promise<LinterResult> {
     const res = await new Konfig().linting.lint({ spec: content });
 

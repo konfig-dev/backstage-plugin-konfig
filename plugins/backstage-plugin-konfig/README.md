@@ -1,6 +1,6 @@
 # Konfig Plugin
 
-> :warning: **This plugin is WIP**. Today, this plugin will lint
+> :warning: **This plugin is WIP**. Today, this plugin will only lint
 > your OpenAPI Specification using our
 > [linter](https://konfigthis.com/docs/lint-rules) specifically built for ensuring
 > high quality SDK generation. If you are interested please reach out to

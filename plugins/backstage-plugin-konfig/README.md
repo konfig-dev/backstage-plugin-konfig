@@ -11,7 +11,7 @@ Welcome to the [Konfig](https://konfigthis.com) Backstage plugin!
 
 This plugin allows you to generate SDKs for your APIs.
 
-![Konfig](docs/konfig.png)
+![Konfig](./docs/konfig.png)
 
 ## Setup
 

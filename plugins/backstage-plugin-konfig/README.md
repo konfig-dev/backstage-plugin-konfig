@@ -1,8 +1,17 @@
 # Konfig Plugin
 
+> :warning: **SDK Generation functionality is WIP**. Today, the plugin will lint
+> your OpenAPI Specification using our
+> [linter](https://konfigthis.com/docs/lint-rules) specifically built for ensuring
+> high quality SDK generation. If you are interested please reach out to
+> dylan@konfigthis.com or schedule a time with us
+> [here](https://konfigthis.com/schedule-demo)!
+
 Welcome to the [Konfig](https://konfigthis.com) Backstage plugin!
 
 This plugin allows you to generate SDKs for your APIs.
+
+![Konfig](docs/konfig.png)
 
 ## Setup
 

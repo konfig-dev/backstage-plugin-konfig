@@ -1,4 +1,4 @@
-# @dweber019/backstage-plugin-api-docs-spectral-linter
+# backstage-plugin-konfig
 
 ## 0.2.3
 

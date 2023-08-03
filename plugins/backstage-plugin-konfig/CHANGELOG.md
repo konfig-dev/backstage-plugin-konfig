@@ -1,5 +1,12 @@
 # backstage-plugin-konfig
 
+## 0.3.0
+
+### Minor Changes
+
+- 13aec82: add logo
+- bfdc957: Updated plugin content to include information about WIP plugin and lint rules
+
 ## 0.2.0
 
 ### Minor Changes

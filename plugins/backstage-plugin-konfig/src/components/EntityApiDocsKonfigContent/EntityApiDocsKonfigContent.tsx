@@ -100,7 +100,7 @@ export const EntityApiDocsKonfigContent = () => {
               src="https://raw.githubusercontent.com/konfig-dev/backstage-plugin-konfig/main/plugins/backstage-plugin-konfig/docs/logo.png"
               alt="Konfig logo"
             />
-            <div style={{ marginLeft: '10px' }}>Konfig</div>
+            <div style={{ marginLeft: '10px' }}>Konfig Linter</div>
           </div>
         }
         subheader={
@@ -125,15 +125,12 @@ export const EntityApiDocsKonfigContent = () => {
               .
             </div>
             <div>
-              The following lint rules are from Konfig's{' '}
               <Link
                 href="https://konfigthis.com/docs/lint-rules"
                 target="_blank"
               >
-                lint rules
-              </Link>{' '}
-              built specifically for ensuring your API is ready to generate high
-              quality SDKs.
+                Read more about lint rules here
+              </Link>
             </div>
           </div>
         }

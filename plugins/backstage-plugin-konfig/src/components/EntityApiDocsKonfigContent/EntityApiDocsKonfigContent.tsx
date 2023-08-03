@@ -16,6 +16,7 @@
 
 import React, { useState } from 'react';
 import {
+  Avatar,
   CodeSnippet,
   InfoCard,
   Progress,
@@ -93,7 +94,16 @@ export const EntityApiDocsKonfigContent = () => {
   return (
     <>
       <InfoCard
-        title="Konfig"
+        title={
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img
+              height="35px"
+              src="https://raw.githubusercontent.com/konfig-dev/backstage-plugin-konfig/main/plugins/backstage-plugin-konfig/docs/logo.png"
+              alt="Konfig logo"
+            />
+            <div style={{ marginLeft: '10px' }}>Konfig</div>
+          </div>
+        }
         subheader={
           <div>
             <div

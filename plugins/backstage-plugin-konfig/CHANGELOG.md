@@ -1,5 +1,11 @@
 # backstage-plugin-konfig
 
+## 0.4.0
+
+### Minor Changes
+
+- d6c0917: update info card title and text
+
 ## 0.3.0
 
 ### Minor Changes

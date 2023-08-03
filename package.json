@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "concurrently \"yarn start\"",
-    "start": "yarn workspace @dweber019/backstage-plugin-api-docs-spectral-linter start",
+    "start": "yarn workspace backstage-plugin-konfig start",
     "start:ci": "concurrently \"yarn start\"",
     "build": "backstage-cli repo build --all",
     "tsc": "tsc",
@@ -21,7 +21,7 @@
     "release": "changeset publish",
     "prepare": "husky install",
     "postinstall": "husky install || true",
-    "new": "backstage-cli new --scope dweber019 --baseVersion 0.0.0 --no-private"
+    "new": "backstage-cli new --baseVersion 0.0.0 --no-private"
   },
   "workspaces": {
     "packages": [

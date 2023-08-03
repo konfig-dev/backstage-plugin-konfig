@@ -1,5 +1,5 @@
 {
-  "name": "@dweber019/backstage-plugin-api-docs-spectral-linter",
+  "name": "backstage-plugin-konfig",
   "version": "0.2.3",
   "main": "src/index.ts",
   "types": "src/index.ts",

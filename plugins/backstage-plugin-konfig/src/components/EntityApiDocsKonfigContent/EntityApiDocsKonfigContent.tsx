@@ -91,67 +91,98 @@ export const EntityApiDocsKonfigContent = () => {
   };
 
   return (
-    <InfoCard
-      title="Konfig Linter"
-      subheader={
-        <Link href="https://konfigthis.com/docs/lint-rules" target="_blank">
-          Read more about lint rules
-        </Link>
-      }
-    >
-      {loading && <Progress />}
+    <>
+      <InfoCard
+        title="Konfig"
+        subheader={
+          <div>
+            <div
+              style={{
+                marginBottom: '10px',
+                border: '1px blue solid',
+                padding: '10px',
+              }}
+            >
+              ⚠️ This plugin is in alpha and we are looking for early users. If
+              you are interesting in generating SDKs for your internal APIs
+              please email{' '}
+              <Link href="mailto:dylan@konfigthis.com" target="_blank">
+                dylan@konfigthis.com
+              </Link>{' '}
+              or schedule a call on{' '}
+              <Link href="https://konfigthis.com/schedule-demo" target="_blank">
+                Calendly
+              </Link>
+              .
+            </div>
+            <div>
+              The following lint rules are from Konfig's{' '}
+              <Link
+                href="https://konfigthis.com/docs/lint-rules"
+                target="_blank"
+              >
+                lint rules
+              </Link>{' '}
+              built specifically for ensuring your API is ready to generate high
+              quality SDKs.
+            </div>
+          </div>
+        }
+      >
+        {loading && <Progress />}
 
-      {!loading && error && (
-        <WarningPanel title="Failed to lint API" message={error?.message} />
-      )}
+        {!loading && error && (
+          <WarningPanel title="Failed to lint API" message={error?.message} />
+        )}
 
-      {!loading &&
-        !error &&
-        (value?.data?.length ? (
-          value.data.map((ruleResult, idx) => (
-            <Grid key={idx} container spacing={2}>
-              <Grid item xs={12}>
-                <Alert
-                  severity={getSeverity(ruleResult.severity)}
-                  variant="outlined"
-                >
-                  <AlertTitle>
-                    {ruleResult.message} ({ruleResult.code})
-                    <IconButton
-                      aria-label="expand"
-                      onClick={handleChange(`alert${idx}`)}
-                      className={classes.alertButton}
-                    >
-                      {`alert${idx}` === expanded ? (
-                        <ExpandLessIcon />
-                      ) : (
-                        <ExpandMoreIcon />
-                      )}
-                    </IconButton>
-                  </AlertTitle>
-                  {`alert${idx}` === expanded && (
-                    <CodeSnippet
-                      text={previewContent(
-                        entity.spec.definition,
-                        ruleResult.linePosition.start,
-                        ruleResult.linePosition.end,
-                        ruleResult.path?.join(' / ') || 'unknown',
-                      )}
-                      language="yaml"
-                      customStyle={{
-                        background: 'transparent',
-                        margin: '0',
-                        padding: '0.5em 0',
-                      }}
-                    />
-                  )}
-                </Alert>
+        {!loading &&
+          !error &&
+          (value?.data?.length ? (
+            value.data.map((ruleResult, idx) => (
+              <Grid key={idx} container spacing={2}>
+                <Grid item xs={12}>
+                  <Alert
+                    severity={getSeverity(ruleResult.severity)}
+                    variant="outlined"
+                  >
+                    <AlertTitle>
+                      {ruleResult.message} ({ruleResult.code})
+                      <IconButton
+                        aria-label="expand"
+                        onClick={handleChange(`alert${idx}`)}
+                        className={classes.alertButton}
+                      >
+                        {`alert${idx}` === expanded ? (
+                          <ExpandLessIcon />
+                        ) : (
+                          <ExpandMoreIcon />
+                        )}
+                      </IconButton>
+                    </AlertTitle>
+                    {`alert${idx}` === expanded && (
+                      <CodeSnippet
+                        text={previewContent(
+                          entity.spec.definition,
+                          ruleResult.linePosition.start,
+                          ruleResult.linePosition.end,
+                          ruleResult.path?.join(' / ') || 'unknown',
+                        )}
+                        language="yaml"
+                        customStyle={{
+                          background: 'transparent',
+                          margin: '0',
+                          padding: '0.5em 0',
+                        }}
+                      />
+                    )}
+                  </Alert>
+                </Grid>
               </Grid>
-            </Grid>
-          ))
-        ) : (
-          <Typography>No linting errors found...</Typography>
-        ))}
-    </InfoCard>
+            ))
+          ) : (
+            <Typography>No linting errors found...</Typography>
+          ))}
+      </InfoCard>
+    </>
   );
 };

@@ -19,12 +19,7 @@ import { LinterApi, LinterResult, LintOptions } from './types';
 import { Spectral } from '@stoplight/spectral-core';
 // @ts-ignore
 import { bundleAndLoadRuleset } from '@stoplight/spectral-ruleset-bundler/with-loader';
-import { fetch } from '@stoplight/spectral-runtime';
-import {
-  ANNOTATION_SPECTRAL_RULESET_URL,
-  getSpectralRulesetUrl,
-  isApiDocsSpectralLinterAvailable,
-} from '../lib/helper';
+import { isApiDocsKonfigLinterAvailable } from '../lib/helper';
 import { ApiEntity } from '@backstage/catalog-model';
 
 /**
@@ -48,51 +43,19 @@ export class LinterClient implements LinterApi {
     this.configApi = options.configApi;
   }
 
-  private async lintApi(
-    content: string,
-    flavor: 'asyncapi' | 'openapi',
-    ruleSetUrl?: string,
-  ): Promise<LinterResult> {
-    let ruleSetToDownload = ruleSetUrl;
-    if (!ruleSetToDownload) {
-      ruleSetToDownload = this.configApi.getOptionalString(
-        `spectralLinter.${
-          flavor === 'openapi' ? 'openApiRulesetUrl' : 'asyncApiRulesetUrl'
-        }`,
-      );
-    }
-
-    if (!ruleSetToDownload) {
-      throw new Error(
-        `Missing rule set, you can provide a rule set with annotation ${ANNOTATION_SPECTRAL_RULESET_URL}`,
-      );
-    }
-
-    const fs = {
-      promises: {
-        async readFile(filepath: string) {
-          if (filepath === '/.spectral.yaml') {
-            return `
-            extends:
-            - ${ruleSetToDownload}
-            `;
-          }
-
-          throw new Error(`Could not read ${filepath}`);
-        },
-      },
-    };
-    const spectral = new Spectral();
-    const ruleSet = await bundleAndLoadRuleset('/.spectral.yaml', {
-      fs,
-      fetch,
-    });
-    spectral.setRuleset(ruleSet);
-    const spectralResult = await spectral.run(content);
+  private async lintApi(content: string): Promise<LinterResult> {
+    const res = await (
+      await fetch('https://api.konfigthis.com/lint', {
+        method: 'POST',
+        body: JSON.stringify({
+          spec: content,
+        }),
+      })
+    ).json();
 
     return {
-      rulesetUrl: ruleSetToDownload,
-      data: spectralResult
+      rulesetUrl: 'https://www.npmjs.com/package/konfig-spectral-ruleset',
+      data: ([] as any)
         .sort((a, b) => a.severity - b.severity)
         .map(diagnosticItem => ({
           linePosition: {
@@ -113,14 +76,10 @@ export class LinterClient implements LinterApi {
         `Linting is not supported for spec.type=${entity.spec.type}.`,
       );
     }
-    return this.lintApi(
-      entity.spec.definition,
-      entity.spec.type as any,
-      getSpectralRulesetUrl(entity),
-    );
+    return this.lintApi(entity.spec.definition);
   }
 
   isApiTypeSupported(entity: ApiEntity) {
-    return isApiDocsSpectralLinterAvailable(entity);
+    return isApiDocsKonfigLinterAvailable(entity);
   }
 }

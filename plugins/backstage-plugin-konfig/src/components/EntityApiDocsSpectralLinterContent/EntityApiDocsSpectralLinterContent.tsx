@@ -92,7 +92,7 @@ export const EntityApiDocsSpectralLinterContent = () => {
 
   return (
     <InfoCard
-      title="Spectral Linter"
+      title="Konfig Linter"
       subheader={
         value?.rulesetUrl && (
           <Link href={value?.rulesetUrl} target="_blank">

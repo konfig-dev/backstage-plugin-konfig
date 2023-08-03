@@ -20,7 +20,7 @@
  * @packageDocumentation
  */
 
-export { isApiDocsSpectralLinterAvailable } from './lib/helper';
+export { isApiDocsKonfigLinterAvailable as isApiDocsSpectralLinterAvailable } from './lib/helper';
 export {
   apiDocsSpectralLinterPlugin,
   EntityApiDocsSpectralLinterContent,

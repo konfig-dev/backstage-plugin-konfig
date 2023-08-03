@@ -28,7 +28,7 @@ import { linterApiRef, LinterClient } from './api';
  * @public
  */
 export const apiDocsKonfigPlugin = createPlugin({
-  id: 'api-docs-spectral-linter',
+  id: 'api-docs-konfig',
   apis: [
     createApiFactory({
       api: linterApiRef,
@@ -46,7 +46,7 @@ export const apiDocsKonfigPlugin = createPlugin({
 });
 
 /**
- * An extension for browsing API docs spectral linter on an entity page.
+ * An extension for browsing API docs Konfig on an entity page.
  * @public
  */
 export const EntityApiDocsKonfigContent = apiDocsKonfigPlugin.provide(

@@ -15,7 +15,7 @@
  */
 import { apiDocsKonfigPlugin } from './plugin';
 
-describe('spectral linter', () => {
+describe('konfig', () => {
   it('should export plugin', () => {
     expect(apiDocsKonfigPlugin).toBeDefined();
   });

@@ -64,7 +64,7 @@ export type LintOptions = {
 };
 
 /**
- * The API used by the spectral linter plugin to lint.
+ * The API used by the Konfig plugin.
  *
  * @public
  */
@@ -82,5 +82,5 @@ export interface LinterApi {
  * @public
  */
 export const linterApiRef = createApiRef<LinterApi>({
-  id: 'plugin.spectral.linter.api',
+  id: 'plugin.konfig.api',
 });

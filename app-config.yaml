@@ -1,5 +1,5 @@
 app:
-  title: API docs spectral linter Dev App
+  title: Konfig Plugin for APIs
   baseUrl: http://localhost:3000
 
 backend:

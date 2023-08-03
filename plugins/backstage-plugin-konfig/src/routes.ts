@@ -16,7 +16,7 @@
 import { createRouteRef } from '@backstage/core-plugin-api';
 
 /**
- * Root route ref for the API docs spectral linter
+ * Root route ref for the API docs Konfig plugin.
  * @public
  */
 export const rootRouteRef = createRouteRef({

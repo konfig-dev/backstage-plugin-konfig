@@ -18,7 +18,6 @@ import { ConfigApi } from '@backstage/core-plugin-api';
 import { LinterApi, LinterResult, LintOptions } from './types';
 import { Konfig } from 'konfig-typescript-sdk';
 // @ts-ignore
-import { bundleAndLoadRuleset } from '@stoplight/spectral-ruleset-bundler/with-loader';
 import { isApiDocsKonfigAvailable } from '../lib/helper';
 import { ApiEntity } from '@backstage/catalog-model';
 

@@ -21,7 +21,4 @@
  */
 
 export { isApiDocsKonfigAvailable } from './lib/helper';
-export {
-  apiDocsKonfigPlugin as apiDocsSpectralLinterPlugin,
-  EntityApiDocsKonfigContent,
-} from './plugin';
+export { apiDocsKonfigPlugin, EntityApiDocsKonfigContent } from './plugin';

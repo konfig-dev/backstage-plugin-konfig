@@ -1,4 +1,4 @@
-# Spectral Linter Plugin
+# Konfig Plugin
 
 ## Setup
 

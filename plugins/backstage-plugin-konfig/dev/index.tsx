@@ -2,10 +2,7 @@ import React from 'react';
 import { createDevApp } from '@backstage/dev-utils';
 import { EntityProvider } from '@backstage/plugin-catalog-react';
 import { Entity } from '@backstage/catalog-model';
-import {
-  apiDocsSpectralLinterPlugin,
-  EntityApiDocsKonfigContent,
-} from '../src';
+import { apiDocsKonfigPlugin, EntityApiDocsKonfigContent } from '../src';
 import { linterApiRef, LinterClient } from '../src/api';
 // @ts-ignore
 import asyncapiApiEntity from './asyncapi-example-api.yaml';
@@ -17,7 +14,7 @@ import openapiZalandoApiEntity from './openapi-zalando-example-api.yaml';
 import openapiBaloiseApiEntity from './openapi-baloise-example-api.yaml';
 
 createDevApp()
-  .registerPlugin(apiDocsSpectralLinterPlugin)
+  .registerPlugin(apiDocsKonfigPlugin)
   .registerApi({
     api: linterApiRef,
     deps: {},
